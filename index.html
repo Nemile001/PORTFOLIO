@@ -39,6 +39,7 @@
                     <a href="#projects" class="hover:text-teal-600 transition-colors">Case Studies</a>
                     <a href="#experience" class="hover:text-teal-600 transition-colors">Experience</a>
                     <a href="#education" class="hover:text-teal-600 transition-colors">Credentials</a>
+                    <a href="#contact" class="hover:text-teal-600 transition-colors">Contact</a>
                 </div>
             </div>
         </div>
@@ -48,14 +49,15 @@
     <header id="profile" class="pt-20 pb-16 px-4 bg-white border-b border-stone-100">
         <div class="max-w-5xl mx-auto text-center">
             <div class="mb-8">
-                <!-- Profile picture: place the uploaded image at assets/profile.jpg -->
-                <img src="profile pic.JPG" alt="Sonia Danjuma Nemile Profile Picture" class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-teal-200 shadow-lg">
+                <!-- Profile picture updated to use the uploaded file -->
+                <img src="uploaded:upwork profile.jfif-47dd1785-b053-471f-b862-69aa2c721f69" alt="Sonia Danjuma Nemile Profile Picture" class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-teal-200 shadow-lg">
             </div>
             <h1 class="text-4xl md:text-5xl font-bold text-stone-900 mb-4">Sonia Danjuma Nemile</h1>
             <p class="text-xl md:text-2xl text-teal-600 font-medium mb-6">Data Analyst | Business Intelligence | Systems Optimization</p>
             <p class="max-w-3xl mx-auto text-stone-600 leading-relaxed mb-8">
                 Highly analytical professional blending a strong background in Computer Science (M.S. Cybersecurity) with practical experience in data analysis, business intelligence, and process automation. Proven ability to translate complex business requirements into technical solutions and drive data-informed strategies.
             </p>
+            <!-- Contact links updated to include LinkedIn -->
             <div class="flex flex-wrap justify-center gap-4 text-sm font-semibold">
                 <span class="px-4 py-2 bg-stone-100 rounded-full text-stone-700">📍 Abuja, Nigeria</span>
                 <a href="mailto:sonianemile@gmail.com" class="px-4 py-2 bg-teal-600 text-white rounded-full hover:bg-teal-700 transition shadow-lg shadow-teal-600/20">✉️ sonianemile@gmail.com</a>
@@ -76,10 +78,11 @@
                         Hover over the chart to explore my core competency areas.
                     </p>
                     
-                    <div id="skill-detail-box" class="bg-white p-6 rounded-xl shadow-sm border border-stone-100 transition-all duration-300">
+                    <!-- Dynamic Text Update Area --><div id="skill-detail-box" class="bg-white p-6 rounded-xl shadow-sm border border-stone-100 transition-all duration-300">
                         <h3 class="text-lg font-bold text-teal-700 mb-2" id="skill-category-title">Core Competencies</h3>
                         <p class="text-stone-600" id="skill-category-desc">Select a category on the chart to view specific tools and technologies.</p>
-                        <ul id="skill-list" class="mt-4 space-y-2 text-sm font-medium text-stone-500"></ul>
+                        <ul id="skill-list" class="mt-4 space-y-2 text-sm font-medium text-stone-500">
+                            <!-- Populated by JS --></ul>
                     </div>
                 </div>
                 
@@ -92,7 +95,7 @@
             </div>
         </section>
 
-        <section id="projects" class="scroll-mt-24 bg-stone-100/50 p-8 rounded-3xl">
+        <!-- Projects Section: Master-Detail View --><section id="projects" class="scroll-mt-24 bg-stone-100/50 p-8 rounded-3xl">
             <div class="mb-10 text-center">
                 <h2 class="text-3xl font-bold mb-4">Analytical Achievements & Case Studies</h2>
                 <p class="text-stone-600 max-w-2xl mx-auto">
@@ -101,9 +104,10 @@
             </div>
 
             <div class="grid lg:grid-cols-3 gap-8">
-                <div class="space-y-4" id="project-list"></div>
+                <!-- Project List (Master) --><div class="space-y-4" id="project-list">
+                    <!-- Project Cards injected by JS --></div>
 
-                <div class="lg:col-span-2 bg-white rounded-2xl shadow-xl border border-stone-100 p-8 flex flex-col">
+                <!-- Project Details (Detail) --><div class="lg:col-span-2 bg-white rounded-2xl shadow-xl border border-stone-100 p-8 flex flex-col">
                     <div id="project-detail-content" class="flex-grow">
                         <div class="flex justify-between items-start mb-6">
                             <div>
@@ -117,21 +121,25 @@
                             Click on a project card to view the specific challenges, solutions, and quantitative impact visualized here.
                         </p>
 
-                        <div class="bg-stone-50 rounded-xl p-6 border border-stone-100">
+                        <!-- Dynamic Chart for Project Impact --><div class="bg-stone-50 rounded-xl p-6 border border-stone-100">
                             <h4 class="text-sm font-bold text-stone-400 uppercase tracking-wider mb-4">Quantitative Impact Visualization</h4>
                             <div class="chart-container">
                                 <canvas id="projectChart"></canvas>
                             </div>
-                            <p id="chart-caption" class="text-center text-sm text-stone-500 mt-4 italic">--</p>
+                            <p id="chart-caption" class="text-center text-sm text-stone-500 mt-4 italic">
+                                --
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="scroll-mt-24">
+        <!-- Experience Timeline --><section id="experience" class="scroll-mt-24">
             <h2 class="text-3xl font-bold mb-10 border-l-4 border-teal-500 pl-4">Professional Experience</h2>
             <div class="relative border-l-2 border-stone-200 ml-4 md:ml-6 space-y-12 pb-4">
+                
+                <!-- Experience Items generated dynamically would be ideal, but hardcoding for structure clarity based on resume -->
                 <div class="relative pl-8 md:pl-12 group">
                     <span class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-teal-500 border-4 border-white shadow-sm group-hover:scale-125 transition-transform"></span>
                     <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
@@ -139,8 +147,8 @@
                         <span class="text-sm font-mono text-stone-500">Afri-venture Capital | Jul 2025 – Present</span>
                     </div>
                     <ul class="list-disc list-outside ml-4 text-stone-600 space-y-1">
-                        <li>Conducted systems analysis and market research to inform critical investment decisions.</li>
-                        <li>Developed automated data systems for continuous portfolio performance tracking.</li>
+                        <li>Conducted systems analysis and market research to inform investment decisions.</li>
+                        <li>Developed automated data systems for portfolio performance tracking.</li>
                     </ul>
                 </div>
 
@@ -164,12 +172,13 @@
                     </div>
                     <p class="text-stone-600">Diagnosed and resolved systemic hardware, software, and network issues. Documented technical processes to improve system reliability.</p>
                 </div>
+
             </div>
         </section>
 
-        <section id="education" class="scroll-mt-24">
+        <!-- Education & Certifications --><section id="education" class="scroll-mt-24">
             <div class="grid md:grid-cols-2 gap-8">
-                <div>
+                <!-- Education --><div>
                     <h2 class="text-2xl font-bold mb-6 text-stone-800">Education</h2>
                     <div class="space-y-4">
                         <div class="bg-white p-6 rounded-xl border border-stone-100 shadow-sm hover:shadow-md transition-shadow">
@@ -195,7 +204,7 @@
                     </div>
                 </div>
 
-                <div>
+                <!-- Certifications --><div>
                     <h2 class="text-2xl font-bold mb-6 text-stone-800">Certifications & Awards</h2>
                     <div class="bg-white rounded-xl border border-stone-100 shadow-sm p-6">
                         <ul class="space-y-4">
@@ -225,20 +234,75 @@
             </div>
         </section>
 
-        <footer class="mt-24 pt-12 pb-8 border-t border-stone-200 text-center">
+        <!-- New Contact Form Section -->
+        <section id="contact" class="scroll-mt-24 pt-12">
+            <h2 class="text-3xl font-bold mb-10 border-l-4 border-teal-500 pl-4">Get In Touch</h2>
+            <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-stone-100">
+                <p class="text-stone-600 mb-8 text-center">
+                    I'm currently seeking new opportunities and challenges in data analysis and BI. Feel free to send a message regarding collaborations, roles, or general inquiries!
+                </p>
+                
+                <!-- 
+                    NOTE: This form uses FormSubmit (https://formsubmit.co/) for easy, no-backend setup. 
+                    You must replace the placeholder email 'your-email@example.com' with your actual email
+                    after downloading the file to make it functional.
+                -->
+                <form action="https://formsubmit.co/sonianemile@gmail.com" method="POST" class="space-y-6">
+                    <!-- Required for FormSubmit to redirect back -->
+                    <input type="hidden" name="_next" value="https://your-portfolio-url.com/thank-you.html">
+                    <input type="hidden" name="_subject" value="New Portfolio Message from Sonia Nemile's Website">
+                    <input type="hidden" name="_template" value="box">
+
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-stone-700 mb-1">Full Name</label>
+                        <input type="text" name="name" id="name" required 
+                               class="w-full px-4 py-2 border border-stone-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition-colors">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-stone-700 mb-1">Email Address</label>
+                        <input type="email" name="email" id="email" required 
+                               class="w-full px-4 py-2 border border-stone-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition-colors">
+                    </div>
+                    
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-stone-700 mb-1">Subject (e.g., Job Opportunity, Collaboration)</label>
+                        <input type="text" name="subject" id="subject" 
+                               class="w-full px-4 py-2 border border-stone-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition-colors">
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-stone-700 mb-1">Your Message</label>
+                        <textarea name="message" id="message" rows="5" required 
+                                  class="w-full px-4 py-2 border border-stone-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition-colors"></textarea>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="submit" 
+                                class="w-full bg-teal-600 text-white font-semibold py-3 rounded-lg shadow-lg hover:bg-teal-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer --><footer class="mt-24 pt-12 pb-8 border-t border-stone-200 text-center">
             <p class="text-stone-400 text-sm">© 2025 Sonia Danjuma Nemile. All rights reserved.</p>
         </footer>
 
     </main>
 
     <script>
+        // --- Data Handling & State ---
+        
         const skillsData = {
             labels: ['Programming', 'Data Wrangling', 'BI & Viz', 'Systems Analysis', 'Core Concepts'],
             datasets: [{
                 label: 'Skill Level',
-                data: [90, 85, 95, 80, 85],
+                data: [90, 85, 95, 80, 85], // Simulated proficiency based on descriptions
                 fill: true,
-                backgroundColor: 'rgba(20, 184, 166, 0.2)',
+                backgroundColor: 'rgba(20, 184, 166, 0.2)', // teal-500
                 borderColor: 'rgb(20, 184, 166)',
                 pointBackgroundColor: 'rgb(13, 148, 136)',
                 pointBorderColor: '#fff',
@@ -267,7 +331,7 @@
                     labels: ['Manual Reporting', 'Automated Dashboard'],
                     datasets: [{
                         label: 'Hours Spent Per Week',
-                        data: [20, 10],
+                        data: [20, 10], // Simulated 50% reduction
                         backgroundColor: ['rgba(168, 162, 158, 0.5)', 'rgba(20, 184, 166, 0.8)'],
                         borderColor: ['rgb(168, 162, 158)', 'rgb(20, 184, 166)'],
                         borderWidth: 1
@@ -287,7 +351,7 @@
                     labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5'],
                     datasets: [{
                         label: 'False Positive Alerts (Count)',
-                        data: [45, 32, 18, 8, 3],
+                        data: [45, 32, 18, 8, 3], // Simulated learning curve
                         fill: true,
                         backgroundColor: 'rgba(20, 184, 166, 0.1)',
                         borderColor: 'rgb(20, 184, 166)',
@@ -308,7 +372,7 @@
                     labels: ['Real-time Data', 'Delayed/Manual'],
                     datasets: [{
                         label: 'Portfolio Data Coverage',
-                        data: [95, 5],
+                        data: [95, 5], // Simulated
                         backgroundColor: ['rgb(20, 184, 166)', 'rgb(231, 229, 228)'],
                         hoverOffset: 4
                     }]
@@ -320,11 +384,15 @@
         let activeProject = projectsData[0];
         let projectChartInstance = null;
 
+        // --- Initialization ---
+
         document.addEventListener('DOMContentLoaded', () => {
             initSkillsChart();
             renderProjectList();
             renderProjectDetail(activeProject);
         });
+
+        // --- Skills Section Logic ---
 
         function initSkillsChart() {
             const ctx = document.getElementById('skillsChart').getContext('2d');
@@ -342,17 +410,22 @@
                         r: {
                             angleLines: { color: 'rgba(0,0,0,0.1)' },
                             grid: { color: 'rgba(0,0,0,0.05)' },
-                            pointLabels: { font: { size: 12, family: "'Inter', sans-serif" }, color: '#44403c' },
+                            pointLabels: {
+                                font: { size: 12, family: "'Inter', sans-serif" },
+                                color: '#44403c'
+                            },
                             suggestedMin: 0,
                             suggestedMax: 100,
-                            ticks: { display: false }
+                            ticks: { display: false } // Hide numbers for cleaner look
                         }
                     },
                     plugins: {
                         legend: { display: false },
                         tooltip: {
                             callbacks: {
-                                label: function(context) { return context.label; }
+                                label: function(context) {
+                                    return context.label;
+                                }
                             }
                         }
                     },
@@ -373,14 +446,18 @@
                     .map(skill => `<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-teal-500 rounded-full"></span>${skill}</li>`)
                     .join('');
             }
-
+            
+            // Initialize with first category
             updateSkillDetails(skillsData.labels[0]);
         }
+
+        // --- Projects Section Logic ---
 
         function renderProjectList() {
             const listContainer = document.getElementById('project-list');
             listContainer.innerHTML = projectsData.map(project => `
-                <div class="project-card cursor-pointer p-4 rounded-xl bg-white border border-stone-100 hover:shadow-md transition-all ${project.id === activeProject.id ? 'active' : ''}" onclick="handleProjectClick(${project.id})">
+                <div class="project-card cursor-pointer p-4 rounded-xl bg-white border border-stone-100 hover:shadow-md transition-all ${project.id === activeProject.id ? 'active' : ''}" 
+                     onclick="handleProjectClick(${project.id})">
                     <h4 class="font-bold text-stone-800">${project.title}</h4>
                     <p class="text-xs text-stone-500 mt-1">${project.role}</p>
                 </div>
@@ -389,19 +466,24 @@
 
         window.handleProjectClick = function(id) {
             activeProject = projectsData.find(p => p.id === id);
-            renderProjectList();
+            renderProjectList(); // Re-render to update active styling
             renderProjectDetail(activeProject);
         };
 
         function renderProjectDetail(project) {
+            // Update Text
             document.getElementById('detail-title').textContent = project.title;
             document.getElementById('detail-role').textContent = project.role;
             document.getElementById('detail-year').textContent = project.year;
             document.getElementById('detail-desc').textContent = project.description;
             document.getElementById('chart-caption').textContent = project.caption;
 
+            // Update Chart
             const ctx = document.getElementById('projectChart').getContext('2d');
-            if (projectChartInstance) projectChartInstance.destroy();
+            
+            if (projectChartInstance) {
+                projectChartInstance.destroy();
+            }
 
             projectChartInstance = new Chart(ctx, {
                 type: project.chartType,
@@ -410,13 +492,31 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: {
-                        legend: { display: project.chartType !== 'bar', position: 'bottom' },
-                        title: { display: true, text: project.keyMetric, font: { size: 16, family: "'Inter', sans-serif" }, padding: { bottom: 20 }, color: '#0f766e' }
+                        legend: { 
+                            display: project.chartType !== 'bar', // Hide legend for simple bar comparisons
+                            position: 'bottom'
+                        },
+                        title: {
+                            display: true,
+                            text: project.keyMetric,
+                            font: { size: 16, family: "'Inter', sans-serif" },
+                            padding: { bottom: 20 },
+                            color: '#0f766e' // teal-700
+                        }
                     },
-                    scales: project.chartType === 'doughnut' ? {} : { y: { beginAtZero: true, grid: { display: false } }, x: { grid: { display: false } } }
+                    scales: project.chartType === 'doughnut' ? {} : {
+                        y: {
+                            beginAtZero: true,
+                            grid: { display: false }
+                        },
+                        x: {
+                            grid: { display: false }
+                        }
+                    }
                 }
             });
         }
+
     </script>
 </body>
 </html>
