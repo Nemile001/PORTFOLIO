@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonia Danjuma Nemile | Data Analyst Portfolio</title>
+    
+    <!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js --><script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Google Fonts --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            max-height: 400px;
+            margin: 0 auto;
+        }
+        .project-card.active {
+            border-left: 4px solid #0d9488; /* teal-600 */
+            background-color: #f0fdfa; /* teal-50 */
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 selection:bg-teal-200">
+
+    <!-- Navigation --><nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-stone-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="font-bold text-xl tracking-tight text-teal-700">Sonia D. Nemile</div>
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#profile" class="hover:text-teal-600 transition-colors">Profile</a>
+                    <a href="#skills" class="hover:text-teal-600 transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-teal-600 transition-colors">Case Studies</a>
+                    <a href="#experience" class="hover:text-teal-600 transition-colors">Experience</a>
+                    <a href="#education" class="hover:text-teal-600 transition-colors">Credentials</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="profile" class="pt-20 pb-16 px-4 bg-white border-b border-stone-100">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="mb-8">
+                <!-- Profile picture: place the uploaded image at assets/profile.jpg -->
+                <img src="profile pic.JPG" alt="Sonia Danjuma Nemile Profile Picture" class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-teal-200 shadow-lg">
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-stone-900 mb-4">Sonia Danjuma Nemile</h1>
+            <p class="text-xl md:text-2xl text-teal-600 font-medium mb-6">Data Analyst | Business Intelligence | Systems Optimization</p>
+            <p class="max-w-3xl mx-auto text-stone-600 leading-relaxed mb-8">
+                Highly analytical professional blending a strong background in Computer Science (M.S. Cybersecurity) with practical experience in data analysis, business intelligence, and process automation. Proven ability to translate complex business requirements into technical solutions and drive data-informed strategies.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-semibold">
+                <span class="px-4 py-2 bg-stone-100 rounded-full text-stone-700">📍 Abuja, Nigeria</span>
+                <a href="mailto:sonianemile@gmail.com" class="px-4 py-2 bg-teal-600 text-white rounded-full hover:bg-teal-700 transition shadow-lg shadow-teal-600/20">✉️ sonianemile@gmail.com</a>
+                <a href="https://www.linkedin.com/in/sonia-danjuma-33935a395/" target="_blank" class="px-4 py-2 bg-stone-100 text-stone-700 rounded-full hover:bg-stone-200 transition">🔗 LinkedIn Profile</a>
+                <span class="px-4 py-2 bg-stone-100 rounded-full text-stone-700">📞 +234 7043022977</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+
+        <!-- Skills Section: Interactive Radar Chart --><section id="skills" class="scroll-mt-24">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 border-l-4 border-teal-500 pl-4">Technical Expertise</h2>
+                    <p class="mb-6 text-stone-600">
+                        My skill set bridges the gap between raw data processing and strategic business intelligence. 
+                        Hover over the chart to explore my core competency areas.
+                    </p>
+                    
+                    <div id="skill-detail-box" class="bg-white p-6 rounded-xl shadow-sm border border-stone-100 transition-all duration-300">
+                        <h3 class="text-lg font-bold text-teal-700 mb-2" id="skill-category-title">Core Competencies</h3>
+                        <p class="text-stone-600" id="skill-category-desc">Select a category on the chart to view specific tools and technologies.</p>
+                        <ul id="skill-list" class="mt-4 space-y-2 text-sm font-medium text-stone-500"></ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-4 rounded-xl shadow-lg border border-stone-100">
+                    <div class="chart-container">
+                        <canvas id="skillsChart"></canvas>
+                    </div>
+                    <p class="text-center text-xs text-stone-400 mt-4">Interactive Radar Chart: Visualizing Skill Distribution</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="scroll-mt-24 bg-stone-100/50 p-8 rounded-3xl">
+            <div class="mb-10 text-center">
+                <h2 class="text-3xl font-bold mb-4">Analytical Achievements & Case Studies</h2>
+                <p class="text-stone-600 max-w-2xl mx-auto">
+                    Select a project below to visualize the impact and methodology. Each case study represents a specific business problem solved through data engineering, algorithm design, or BI optimization.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="space-y-4" id="project-list"></div>
+
+                <div class="lg:col-span-2 bg-white rounded-2xl shadow-xl border border-stone-100 p-8 flex flex-col">
+                    <div id="project-detail-content" class="flex-grow">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 id="detail-title" class="text-2xl font-bold text-stone-900">Select a Project</h3>
+                                <p id="detail-role" class="text-teal-600 font-medium mt-1">--</p>
+                            </div>
+                            <span id="detail-year" class="px-3 py-1 bg-stone-100 text-stone-500 text-xs rounded-full">--</span>
+                        </div>
+                        
+                        <p id="detail-desc" class="text-stone-600 mb-8 leading-relaxed">
+                            Click on a project card to view the specific challenges, solutions, and quantitative impact visualized here.
+                        </p>
+
+                        <div class="bg-stone-50 rounded-xl p-6 border border-stone-100">
+                            <h4 class="text-sm font-bold text-stone-400 uppercase tracking-wider mb-4">Quantitative Impact Visualization</h4>
+                            <div class="chart-container">
+                                <canvas id="projectChart"></canvas>
+                            </div>
+                            <p id="chart-caption" class="text-center text-sm text-stone-500 mt-4 italic">--</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="scroll-mt-24">
+            <h2 class="text-3xl font-bold mb-10 border-l-4 border-teal-500 pl-4">Professional Experience</h2>
+            <div class="relative border-l-2 border-stone-200 ml-4 md:ml-6 space-y-12 pb-4">
+                <div class="relative pl-8 md:pl-12 group">
+                    <span class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-teal-500 border-4 border-white shadow-sm group-hover:scale-125 transition-transform"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-stone-800">Venture Capital Analyst</h3>
+                        <span class="text-sm font-mono text-stone-500">Afri-venture Capital | Jul 2025 – Present</span>
+                    </div>
+                    <ul class="list-disc list-outside ml-4 text-stone-600 space-y-1">
+                        <li>Conducted systems analysis and market research to inform critical investment decisions.</li>
+                        <li>Developed automated data systems for continuous portfolio performance tracking.</li>
+                    </ul>
+                </div>
+
+                <div class="relative pl-8 md:pl-12 group">
+                    <span class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-stone-300 border-4 border-white shadow-sm group-hover:bg-teal-400 transition-colors"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-stone-800">Data Analyst & Assistant Team Lead</h3>
+                        <span class="text-sm font-mono text-stone-500">Heckerbella | Mar 2023 – May 2023</span>
+                    </div>
+                    <ul class="list-disc list-outside ml-4 text-stone-600 space-y-1">
+                        <li>Led a team in an end-to-end data analysis project, delivering actionable insights.</li>
+                        <li>Developed automated reporting tools to optimize program strategies.</li>
+                    </ul>
+                </div>
+
+                <div class="relative pl-8 md:pl-12 group">
+                    <span class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-stone-300 border-4 border-white shadow-sm group-hover:bg-teal-400 transition-colors"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-stone-800">IT Support Analyst</h3>
+                        <span class="text-sm font-mono text-stone-500">Lextech Ecosystem Limited | Mar 2025 - Jun 2025</span>
+                    </div>
+                    <p class="text-stone-600">Diagnosed and resolved systemic hardware, software, and network issues. Documented technical processes to improve system reliability.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="scroll-mt-24">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="text-2xl font-bold mb-6 text-stone-800">Education</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white p-6 rounded-xl border border-stone-100 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-lg">M.S. Cybersecurity and Digital Forensics</h3>
+                                    <p class="text-stone-500">Bingham University</p>
+                                </div>
+                                <span class="bg-teal-50 text-teal-700 px-2 py-1 rounded text-xs font-bold">GPA 4.28</span>
+                            </div>
+                            <p class="text-sm text-stone-400 mt-2">Nov 2024</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-stone-100 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-lg">B.S. Computer Science</h3>
+                                    <p class="text-stone-500">Les Cours Sonou University</p>
+                                </div>
+                                <span class="bg-stone-100 text-stone-600 px-2 py-1 rounded text-xs font-bold">GPA 3.86</span>
+                            </div>
+                            <p class="text-sm text-stone-400 mt-2">Nov 2021</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-6 text-stone-800">Certifications & Awards</h2>
+                    <div class="bg-white rounded-xl border border-stone-100 shadow-sm p-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3">
+                                <span class="flex-shrink-0 w-2 h-2 rounded-full bg-teal-500"></span>
+                                <span class="text-stone-700 font-medium">Google Professional Data Analyst Certificate</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="flex-shrink-0 w-2 h-2 rounded-full bg-teal-500"></span>
+                                <span class="text-stone-700 font-medium">Google Advanced Data Analytics Professional Certificate</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="flex-shrink-0 w-2 h-2 rounded-full bg-stone-400"></span>
+                                <span class="text-stone-600">IBM Data Analyst Professional Certificate (Feb 2024)</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="flex-shrink-0 w-2 h-2 rounded-full bg-stone-400"></span>
+                                <span class="text-stone-600">Asana Workflow Specialist (Sep 2025)</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="flex-shrink-0 w-2 h-2 rounded-full bg-yellow-400"></span>
+                                <span class="text-stone-600">Student Union Excellence Award</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="mt-24 pt-12 pb-8 border-t border-stone-200 text-center">
+            <p class="text-stone-400 text-sm">© 2025 Sonia Danjuma Nemile. All rights reserved.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        const skillsData = {
+            labels: ['Programming', 'Data Wrangling', 'BI & Viz', 'Systems Analysis', 'Core Concepts'],
+            datasets: [{
+                label: 'Skill Level',
+                data: [90, 85, 95, 80, 85],
+                fill: true,
+                backgroundColor: 'rgba(20, 184, 166, 0.2)',
+                borderColor: 'rgb(20, 184, 166)',
+                pointBackgroundColor: 'rgb(13, 148, 136)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(13, 148, 136)'
+            }],
+            details: {
+                'Programming': ['Python', 'SQL', 'HTML', 'CSS'],
+                'Data Wrangling': ['Pandas', 'NumPy', 'Data Modeling'],
+                'BI & Viz': ['Power BI', 'Tableau', 'Excel (Advanced)', 'Cognos'],
+                'Systems Analysis': ['Process Optimization', 'Algorithm Design', 'Agile'],
+                'Core Concepts': ['Statistical Analysis', 'Pattern Recognition', 'Cybersecurity Protocols']
+            }
+        };
+
+        const projectsData = [
+            {
+                id: 1,
+                title: "Automated Reporting Dashboards",
+                role: "Data Analyst @ Heckerbella",
+                year: "Mar 2023 – May 2023",
+                description: "Designed and implemented automated reporting dashboards using Power BI and Excel. The primary goal was to eliminate manual data aggregation tasks to free up time for strategic analysis.",
+                keyMetric: "50% Reduction in Reporting Time",
+                chartType: 'bar',
+                chartData: {
+                    labels: ['Manual Reporting', 'Automated Dashboard'],
+                    datasets: [{
+                        label: 'Hours Spent Per Week',
+                        data: [20, 10],
+                        backgroundColor: ['rgba(168, 162, 158, 0.5)', 'rgba(20, 184, 166, 0.8)'],
+                        borderColor: ['rgb(168, 162, 158)', 'rgb(20, 184, 166)'],
+                        borderWidth: 1
+                    }]
+                },
+                caption: "Comparison of weekly hours spent on reporting before and after automation implementation."
+            },
+            {
+                id: 2,
+                title: "Intelligent Alert System",
+                role: "M.S. Thesis Project",
+                year: "2024",
+                description: "Engineered a Python-based algorithm utilizing pattern recognition to model user behavior and adjust smart lock sensitivity. The focus was on reducing false positive security alerts which cause user fatigue.",
+                keyMetric: "False Positive Reduction",
+                chartType: 'line',
+                chartData: {
+                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5'],
+                    datasets: [{
+                        label: 'False Positive Alerts (Count)',
+                        data: [45, 32, 18, 8, 3],
+                        fill: true,
+                        backgroundColor: 'rgba(20, 184, 166, 0.1)',
+                        borderColor: 'rgb(20, 184, 166)',
+                        tension: 0.4
+                    }]
+                },
+                caption: "Algorithm learning curve showing the rapid decline in false positive alerts over 5 weeks of training."
+            },
+            {
+                id: 3,
+                title: "Investment Tracking System",
+                role: "Venture Capital Analyst",
+                year: "Jul 2025 – Present",
+                description: "Developed automated performance tracking systems for investment portfolios. This system replaced fragmented spreadsheets with a unified data pipeline, enhancing accuracy and stakeholder communication.",
+                keyMetric: "Data Accuracy & Availability",
+                chartType: 'doughnut',
+                chartData: {
+                    labels: ['Real-time Data', 'Delayed/Manual'],
+                    datasets: [{
+                        label: 'Portfolio Data Coverage',
+                        data: [95, 5],
+                        backgroundColor: ['rgb(20, 184, 166)', 'rgb(231, 229, 228)'],
+                        hoverOffset: 4
+                    }]
+                },
+                caption: "Current system achieves 95% real-time data availability for portfolio tracking compared to previous manual updates."
+            }
+        ];
+
+        let activeProject = projectsData[0];
+        let projectChartInstance = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initSkillsChart();
+            renderProjectList();
+            renderProjectDetail(activeProject);
+        });
+
+        function initSkillsChart() {
+            const ctx = document.getElementById('skillsChart').getContext('2d');
+            const detailTitle = document.getElementById('skill-category-title');
+            const detailDesc = document.getElementById('skill-category-desc');
+            const skillList = document.getElementById('skill-list');
+
+            new Chart(ctx, {
+                type: 'radar',
+                data: skillsData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(0,0,0,0.1)' },
+                            grid: { color: 'rgba(0,0,0,0.05)' },
+                            pointLabels: { font: { size: 12, family: "'Inter', sans-serif" }, color: '#44403c' },
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            ticks: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) { return context.label; }
+                            }
+                        }
+                    },
+                    onHover: (event, elements) => {
+                        if (elements.length) {
+                            const index = elements[0].index;
+                            const category = skillsData.labels[index];
+                            updateSkillDetails(category);
+                        }
+                    }
+                }
+            });
+
+            function updateSkillDetails(category) {
+                detailTitle.textContent = category;
+                detailDesc.textContent = `Key tools and methodologies proficiently applied in ${category}.`;
+                skillList.innerHTML = skillsData.details[category]
+                    .map(skill => `<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-teal-500 rounded-full"></span>${skill}</li>`)
+                    .join('');
+            }
+
+            updateSkillDetails(skillsData.labels[0]);
+        }
+
+        function renderProjectList() {
+            const listContainer = document.getElementById('project-list');
+            listContainer.innerHTML = projectsData.map(project => `
+                <div class="project-card cursor-pointer p-4 rounded-xl bg-white border border-stone-100 hover:shadow-md transition-all ${project.id === activeProject.id ? 'active' : ''}" onclick="handleProjectClick(${project.id})">
+                    <h4 class="font-bold text-stone-800">${project.title}</h4>
+                    <p class="text-xs text-stone-500 mt-1">${project.role}</p>
+                </div>
+            `).join('');
+        }
+
+        window.handleProjectClick = function(id) {
+            activeProject = projectsData.find(p => p.id === id);
+            renderProjectList();
+            renderProjectDetail(activeProject);
+        };
+
+        function renderProjectDetail(project) {
+            document.getElementById('detail-title').textContent = project.title;
+            document.getElementById('detail-role').textContent = project.role;
+            document.getElementById('detail-year').textContent = project.year;
+            document.getElementById('detail-desc').textContent = project.description;
+            document.getElementById('chart-caption').textContent = project.caption;
+
+            const ctx = document.getElementById('projectChart').getContext('2d');
+            if (projectChartInstance) projectChartInstance.destroy();
+
+            projectChartInstance = new Chart(ctx, {
+                type: project.chartType,
+                data: project.chartData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: project.chartType !== 'bar', position: 'bottom' },
+                        title: { display: true, text: project.keyMetric, font: { size: 16, family: "'Inter', sans-serif" }, padding: { bottom: 20 }, color: '#0f766e' }
+                    },
+                    scales: project.chartType === 'doughnut' ? {} : { y: { beginAtZero: true, grid: { display: false } }, x: { grid: { display: false } } }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
