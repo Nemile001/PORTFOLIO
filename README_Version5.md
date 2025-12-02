@@ -37,5 +37,4 @@ Troubleshooting / notes
 - If images appear missing, verify assets/profile.jpg exists and is committed.
 - Optionally optimize assets/profile.jpg (resize to ~400px wide, compress to reduce page load).
 
-If you want me to retry the automated creation/push after you create the empty repo in your Nemile001 account, reply "retry" and I will attempt the automated publish again immediately.
 ```
